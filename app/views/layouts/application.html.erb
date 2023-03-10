@@ -10,7 +10,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="<%= cookies[:theme] %>">
+    <%= cookies[:theme] %>
+    <%= link_to 'light', set_theme_path(theme: 'light') %>
+    <%= link_to 'dark', set_theme_path(theme: 'dark') %>
+    <%= link_to 'system default', set_theme_path %>
+    <hr>
     <%= yield %>
   </body>
 </html>
